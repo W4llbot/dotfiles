@@ -1,0 +1,31 @@
+local function enable_transparency()
+	vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalNC", { bg = "none" })
+        vim.api.nvim_set_hl(0, "NormalFloat", { bg = "none" })
+        vim.api.nvim_set_hl(0, "WinSeparator", { bg = "none" })
+end
+
+return {
+	{
+		"ellisonleao/gruvbox.nvim",
+		name = "gruvbox",
+		lazy = false,
+        opts = {},
+		config = function()
+            vim.o.background = "dark"
+			vim.cmd.colorscheme("gruvbox")
+			enable_transparency()
+		end
+	},
+	{
+		"nvim-lualine/lualine.nvim",
+		dependencies = {
+			"nvim-tree/nvim-web-devicons",
+		},
+                config = function()
+                        require("lualine").setup({
+                                options = { theme = "auto" }
+                        });
+                end,
+	}
+}
