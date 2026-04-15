@@ -45,6 +45,7 @@ window#waybar.empty #window {
 
 /* configuring the modules */
 .modules-left {
+  min-width: 150px;
   margin: 0 0 0 10px;
   padding: 0 0 0 0;
   background-color: @background;
@@ -130,6 +131,7 @@ button {
 }
 
 /* media player */
+#custom-media,
 #mpris {
   margin: 0 0 0 0 ;
   padding: 0 10px;
@@ -139,9 +141,9 @@ button {
   /* color: @background; */
 }
 
-#mpris.playing {
-  /* border-radius: 8px; */
-}
+/* #mpris.playing { */
+/*   border-radius: 8px; */
+/* } */
 
 
 /* center module  */
@@ -207,6 +209,7 @@ button {
 }
 
 #battery.critical:not(.charging) {
+  border-radius: 12px; 
   background-color: @urgent;
   color: @text;
   animation: blink 0.5s steps(12) infinite alternate;

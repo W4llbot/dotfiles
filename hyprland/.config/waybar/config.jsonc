@@ -4,7 +4,8 @@
 
     "modules-left": [
         // "group/Utilities",
-        "mpris"
+        "custom/media"
+        // "mpris"
     ],
     "modules-center": [
         // "group/windows"
@@ -101,9 +102,17 @@
             "default": "•"
         }
     },
-
+    "custom/media": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "~/.config/waybar/scripts/mpris.sh",
+        "on-click": "playerctl play-pause",
+        "interval": 2,
+        "escape": true
+    },
     "mpris": {
         "format": "  {status_icon} | {dynamic}",
+        "format-disconnected": "  ▶ | No players",
         "interval": 1,
         "dynamic-len": 40,
         "status-icons": {
@@ -111,7 +120,7 @@
             "paused": "▶",
             "stopped": ""
         },
-        "dynamic-order": ["artist"]
+        "dynamic-order": ["artist", "title"]
     },
 
 
