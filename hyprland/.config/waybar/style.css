@@ -1,25 +1,26 @@
 /* colors defined at top for easy configuring */
 @define-color color-orange #D65D0E;
 @define-color color-aqua #689D6A;
-@define-color color-green #B8BB26;
+@define-color color-green #98971A;
 @define-color color-white #EBDBB2;
 
-@define-color background #B8BB26;
+@define-color background #282828;
 @define-color second-background #504945;
-@define-color text #282828;
+@define-color text #EBDBB2;
 
-@define-color borders #B8BB26;
+@define-color borders #98971A;
 @define-color focused #D08B57;
 @define-color focused2 #EBDBB2;
 @define-color color1 #D65D0E;
 @define-color color2 #8D7AAE;
-@define-color color3 #B8BB26;
+@define-color color3 #98971A;
 @define-color urgent #B05A5A;
 
 /* font declared */
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-size: 14px;
+  font-weight: bold;
+  font-size: 8px;
 }
 
 #custom-openbracket,
@@ -46,27 +47,27 @@ window#waybar.empty #window {
 /* configuring the modules */
 .modules-left {
   min-width: 150px;
-  margin: 0 0 0 10px;
+  margin: 0 0 0 4px;
   padding: 0 0 0 0;
   background-color: @background;
   border: 2px solid @borders;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .modules-center {
   margin: 0 0 0 0;
   padding: 0 10px 0 10px;
-  background-color: @second-background;
+  background-color: @background;
   border: 2px solid @borders;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 .modules-right {
-  margin: 0 10px 0 0;
+  margin: 0 4px 0 0;
   padding: 0 10px 0 10px;
   background-color: @background;
   border: 2px solid @borders;
-  border-radius: 10px;
+  border-radius: 8px;
 }
 
 
@@ -104,17 +105,17 @@ button {
   min-width: 0;
   padding: 0 8px 0 8px;
   background-color: transparent;
-  color: @focused2;
+  color: @;
   border-radius: 12px;
 }
 
 #workspaces button:hover {
-  background-color: @color1;
+  background-color: @color-green;
 }
 
 #workspaces button.active {
-  color: @text;
-  background-color: @background;
+  color: @background;
+  background-color: @color-green;
 }
 
 #workspaces button.urgent {
@@ -137,8 +138,7 @@ button {
   padding: 0 10px;
   background-color: @background;
   color: @text;
-  /* background-color: @color3; */
-  /* color: @background; */
+  border-radius: 8px
 }
 
 /* #mpris.playing { */

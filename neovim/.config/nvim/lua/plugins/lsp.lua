@@ -46,6 +46,10 @@ return {
                     virtual_lines = false, -- Enable diagnostics on their own lines
                 })
 
+                -- vim.keymap.set('n', '<leader>t', function()
+                --     vim.diagnostic.enable(not vim.diagnostic.is_enabled())
+                -- end, { desc = 'Toggle lsp diagnostics' })
+
                 vim.keymap.set("n", "<leader>sd", vim.diagnostic.open_float, { desc = "Show diagnostics in float" })
 
                 vim.api.nvim_create_autocmd("FileType", {
