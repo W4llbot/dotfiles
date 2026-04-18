@@ -8,24 +8,18 @@
 @define-color second-background #504945;
 @define-color text #EBDBB2;
 
-@define-color borders #98971A;
+@define-color borders #689D6A;
 @define-color focused #D08B57;
 @define-color focused2 #EBDBB2;
 @define-color color1 #D65D0E;
 @define-color color2 #8D7AAE;
-@define-color color3 #98971A;
+@define-color color3 #689D6A;
 @define-color urgent #B05A5A;
 
 /* font declared */
 * {
   font-family: "JetBrainsMono Nerd Font";
-  font-weight: bold;
-  font-size: 10px;
-}
-
-#custom-openbracket,
-#custom-closebracket {
-  margin: 0 0;
+  font-size: 12px;
 }
 
 /* idk what all this does */
@@ -46,9 +40,8 @@ window#waybar.empty #window {
 
 /* configuring the modules */
 .modules-left {
-  min-width: 150px;
   margin: 0 0 0 4px;
-  padding: 0 0 0 0;
+  padding: 0 0 0 10px;
   background-color: @background;
   border: 2px solid @borders;
   border-radius: 8px;
@@ -56,7 +49,7 @@ window#waybar.empty #window {
 
 .modules-center {
   margin: 0 0 0 0;
-  padding: 0 10px 0 10px;
+  padding: 0 0;
   background-color: @background;
   border: 2px solid @borders;
   border-radius: 8px;
@@ -64,10 +57,17 @@ window#waybar.empty #window {
 
 .modules-right {
   margin: 0 4px 0 0;
-  padding: 0 10px 0 10px;
+  padding: 0 10px;
   background-color: @background;
   border: 2px solid @borders;
   border-radius: 8px;
+}
+
+#custom-split,
+#custom-openbracket,
+#custom-closebracket {
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -82,10 +82,9 @@ button {
 #custom-arch,
 #custom-powerprofile,
 #custom-themeswitcher {
-  padding-right: 10px;
-  padding-left: 5px;
+  padding: 0 10px;
+  margin: 0;
   font-size: 15px;
-  border-radius: 8px;
 }
 
 #custom-arch:hover {
@@ -103,19 +102,17 @@ button {
 /* workspace pannel */
 #workspaces button {
   min-width: 0;
-  padding: 0 8px 0 8px;
+  padding: 0 8px;
   background-color: transparent;
-  color: @;
-  border-radius: 12px;
+  border-radius: 0;
 }
 
 #workspaces button:hover {
-  background-color: @color-green;
+  background-color: @second-background;
 }
 
 #workspaces button.active {
-  color: @background;
-  background-color: @color-green;
+  background-color: @second-background;
 }
 
 #workspaces button.urgent {
@@ -135,10 +132,10 @@ button {
 #custom-media,
 #mpris {
   margin: 0 0 0 0 ;
-  padding: 0 10px;
-  background-color: @background;
-  color: @text;
-  border-radius: 8px
+  padding: 0 10px 0 5px;
+  background-color: @borders;
+  color: @background;
+  border-radius: 0 6px 6px 0;
 }
 
 /* #mpris.playing { */
@@ -151,7 +148,7 @@ button {
 
 /* center module  */
 #window {
-  padding: 0 5px;
+  /* padding: 0 5px; */
 }
 
 /* Right Island */
@@ -162,16 +159,22 @@ button {
 #cpu,
 #memory,
 #custom-clipboard,
-#custom-bluetooth,
+#bluetooth,
 #network {
-  padding: 0 10px;
+  margin: 0;
+  padding: 0 5px;
+}
+
+#network {
+  margin: 0 5px 0 0;
 }
 
 #clock:hover,
 #battery:hover,
-#custom-cpu:hover,
+#cpu:hover,
+#memory:hover,
 #custom-clipboard:hover,
-#custom-bluetooth:hover,
+#bluetooth:hover,
 #network:hover,
 #idle_inhibitor:hover,
 #custom-swaync:hover,
@@ -181,7 +184,8 @@ button {
 }
 
 #idle_inhibitor {
-  padding: 0 10px 0 0;
+  padding: 0 10px;
+  margin: 0;
 }
 
 #custom-powerprofile {
@@ -205,14 +209,14 @@ button {
   color: @text;
 }
 
-#battery.charging,
-#battery.plugged {
-  /* background-color: @focused2 ; */
-  /* color: @background; */
+/* #battery.plugged, */
+#battery.charging {
+  background-color: @focused2 ;
+  color: @background;
 }
 
 #battery.critical:not(.charging) {
-  border-radius: 12px; 
+  /* border-radius: 12px;  */
   background-color: @urgent;
   color: @text;
   animation: blink 0.5s steps(12) infinite alternate;

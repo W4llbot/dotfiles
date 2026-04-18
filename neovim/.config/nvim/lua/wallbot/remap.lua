@@ -1,8 +1,20 @@
 vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
+-- Save with leader+w
+vim.keymap.set("n", "<Leader>w", ":w<CR>", { desc = "Write to current buffer" } )
+
+-- Better window navigation
+vim.keymap.set("n", "<C-h>", "<C-w>h")
+vim.keymap.set("n", "<C-j>", "<C-w>j")
+vim.keymap.set("n", "<C-k>", "<C-w>k")
+vim.keymap.set("n", "<C-l>", "<C-w>l")
+
+
+-- quickly enter netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
 
+-- quickly exit terminal
 vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- Raylib specific compile

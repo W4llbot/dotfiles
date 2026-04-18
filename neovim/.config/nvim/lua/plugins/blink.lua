@@ -3,7 +3,7 @@ vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpActiveParameter', { link = 'Search'
 
 return {
     "saghen/blink.cmp",
-    version = "*", -- Use a release tag to download pre-built binaries
+    version = "1.*", -- Use a release tag to download pre-built binaries
     opts = {
         enabled = function()
             -- Disable in prompt buffers (REPL) to prevent the "context" error
