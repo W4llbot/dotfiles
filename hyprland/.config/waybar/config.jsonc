@@ -3,7 +3,7 @@
     "spacing": 5, 
 
     "modules-left": [
-        // "group/Utilities",
+        "group/Utilities",
         "group/workspaces",
         "custom/media"
         // "mpris"
@@ -36,7 +36,7 @@
         "modules":[
             "custom/openbracket",
             "custom/arch",
-            "custom/split",
+            // "custom/split",
             "idle_inhibitor",
             // "custom/powerprofile",
             // "custom/themeswitcher",
@@ -44,8 +44,8 @@
         ]
     },
     "custom/arch": {
-         "format": "󰣇",
-        "tooltip": false,
+         "format": "󰣇 ",
+        "tooltip-format": "Btw",
          "on-click": "rofi -show drun"
     },
     // "custom/powerprofile": {
@@ -63,7 +63,6 @@
     //     "on-click": "~/.config/waybar/scripts/theme-switcher.sh next",
     //     "on-click-right": "~/.config/scripts/theme-switcher.sh random"
     // },
-
     "group/workspaces":{
         "orientation": "horizontal",
         "modules":[
@@ -187,6 +186,7 @@
     },
     "wireplumber": {
         "scroll-step": 5,
+        "on-click": "pavucontrol",
         "format": "{icon} {volume}%",
         "format-bluetooth": "{icon}{volume}% ",
         "format-bluetooth-muted": "󰝟{volume}% ",
@@ -213,8 +213,9 @@
         "modules": [
             "custom/openbracket",
             "bluetooth",
-            "custom/split",
             "network",
+            "custom/split",
+            "wireplumber",
             "custom/closebracket"
         ]
     },
@@ -231,7 +232,7 @@
     "clock": {
         "format": "{:%I:%M}",
         "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
-        "onclick" : "kalender"
+        "on-click" : "kalender"
     },
     "custom/clipboard": {
         "format": "",
@@ -267,7 +268,7 @@
         "on-click": "wlogout"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -288,7 +289,7 @@
         "format": "",
         "format-disabled": "󰂲",
         "format-connected": "󰂰",
-        "tooltip-format": "Connected to {controller_alias}\n{num_connections}:",
+        "tooltip-format": "{controller_alias}: no connections",
         "tooltip-format-connected": "Connected to {controller_alias}:\n{device_enumerate}",
         "tooltip-format-enumerate-connected": "{device_alias}",
         "on-click": "blueman-manager"
