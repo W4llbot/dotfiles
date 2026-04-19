@@ -166,6 +166,10 @@ button {
   padding: 0 5px;
 }
 
+#custom-power {
+    margin: 0 6px 0 5px;
+}
+
 #network {
   margin: 0 5px 0 0;
 }
