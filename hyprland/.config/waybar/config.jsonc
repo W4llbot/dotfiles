@@ -165,7 +165,7 @@
         ]
     },
     "clock": {
-        "format": "{:%I:%M}",
+        "format": " {:%H %M} ",
         "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click" : "kalender"
     },

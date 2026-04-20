@@ -49,7 +49,7 @@ ZSH_THEME="robbyrussell"
 # DISABLE_AUTO_TITLE="true"
 
 # Uncomment the following line to enable command auto-correction.
-ENABLE_CORRECTION="false"
+# ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
 # You can also set it to another string to have that shown instead of the default red dots.
@@ -111,14 +111,31 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-alias la="ls -a"
-alias ll="ls -la"
+alias grep='grep --color=auto'
+alias mkdir='mkdir -p -v'
+
+# ls
+alias ls='ls -hF --color=auto'
+alias ll="ls -l"
+alias la="ll -A"
+alias lx='ll -BX'                   # sort by extension
+alias lz='ll -rS'                   # sort by size
+alias lt='ll -rt'                   # sort by date
+
+## Safety features
+alias cp='cp -i'
+alias mv='mv -i'
+alias rm='rm -I'                    # 'rm -i' prompts for every file
+alias ln='ln -i'
+alias chown='chown --preserve-root'
+alias chmod='chmod --preserve-root'
+alias chgrp='chgrp --preserve-root'
 
 alias ff="fastfetch"
+ff
 
+# use neovim as default man reader
 export MANPAGER="nvim +Man!"
-
-fastfetch
 
 export GTK_THEME=Adwaita:dark
 
@@ -132,4 +149,4 @@ function y() {
 }
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
