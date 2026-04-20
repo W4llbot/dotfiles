@@ -7,7 +7,7 @@ return {
         ---@type dapview.Config
         opts = {
             winbar = {
-                controls = { enabled = true }
+                -- controls = { enabled = true }
             },
             windows = {
                 size = 0.5,
@@ -47,7 +47,7 @@ return {
                 type = 'server',
                 port = "${port}",
                 executable = {
-                    command = vim.fn.stdpath("data") .. "/mason/bin/codelldb.cmd",
+                    command = vim.fn.stdpath("data") .. "/mason/bin/codelldb",
                     args = {"--port", "${port}"},
                 }
             }
@@ -73,6 +73,7 @@ return {
 
             -- Essential Debugging Control
             vim.keymap.set("n", "<F5>", dap.continue, { desc = "Debug: Start/Continue" })
+            vim.keymap.set("n", "<F6>", dap.terminate, { desc = "Debug: Terminate Session" })
             vim.keymap.set("n", "<F10>", dap.step_over, { desc = "Debug: Step Over" })
             vim.keymap.set("n", "<F11>", dap.step_into, { desc = "Debug: Step Into" })
             vim.keymap.set("n", "<F12>", dap.step_out, { desc = "Debug: Step Out" })

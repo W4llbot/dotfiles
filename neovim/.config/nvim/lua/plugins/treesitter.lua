@@ -1,5 +1,7 @@
 local parser_path = vim.fs.normalize(vim.fn.stdpath("data") .. "/site")
 
+---@module "lazy"
+---@type "lazySpec"
 return {
     'nvim-treesitter/nvim-treesitter',
     lazy = false,
@@ -9,7 +11,7 @@ return {
         indent = { enabled = false },
     },
     config = function()
-        require("nvim-treesitter").install {
+        local languages = {
             "rust",
             "javascript",
             "zig",
@@ -29,5 +31,21 @@ return {
             "typst",
             "yaml",
         }
+
+        require("nvim-treesitter").install { languages }
+
+        vim.api.nvim_create_autocmd('FileType', {
+            pattern = languages,
+            callback = function()
+                -- enable highlighting
+                vim.treesitter.start()
+
+                -- enable folding
+                -- vim.wo[0][0].foldexpr = 'v:lua.vim.treesitter.foldexpr()'
+                -- vim.wo[0][0].foldmethod = 'expr'
+                vim.wo[0][0].foldmethod = 'indent'
+                vim.wo[0][0].foldlevel = 99
+            end,
+        })
     end
 }

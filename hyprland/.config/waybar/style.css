@@ -184,6 +184,7 @@ button {
 #idle_inhibitor:hover,
 #custom-swaync:hover,
 #backlight:hover,
+#custom-power:hover,
 #wireplumber:hover {
   color: @color1;
 }

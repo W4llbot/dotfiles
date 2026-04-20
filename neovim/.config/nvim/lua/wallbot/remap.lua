@@ -5,10 +5,10 @@ vim.g.maplocalleader = " "
 vim.keymap.set("n", "<Leader>w", ":w<CR>", { desc = "Write to current buffer" } )
 
 -- Better window navigation
-vim.keymap.set("n", "<C-h>", "<C-w>h")
-vim.keymap.set("n", "<C-j>", "<C-w>j")
-vim.keymap.set("n", "<C-k>", "<C-w>k")
-vim.keymap.set("n", "<C-l>", "<C-w>l")
+vim.keymap.set({"n", "t"}, "<C-h>", "<C-w>h")
+vim.keymap.set({"n", "t"}, "<C-j>", "<C-w>j")
+vim.keymap.set({"n", "t"}, "<C-k>", "<C-w>k")
+vim.keymap.set({"n", "t"}, "<C-l>", "<C-w>l")
 
 
 -- quickly enter netrw

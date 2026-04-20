@@ -1,6 +1,7 @@
 [{
     "height": 20,
     "spacing": 5, 
+    // "output": "HDMI-A-2",
 
     "modules-left": [
         "group/Utilities",
@@ -79,9 +80,9 @@
         "disable-scroll-wraparound": true,
         "active-only": false,
         "format": "{icon}",
-        "persistent-workspaces": {
-            "*": 6 // Shows workspaces 1-5 on all monitors
-        },
+        // "persistent-workspaces": {
+        //     "*": 8
+        // },
         "format-icons": {
             "1": "1",
             "2": "2",
@@ -89,23 +90,10 @@
             "4": "4",
             "5": "5",
             "6": "6",
-            "7": "7",
-            "8": "8",
-            "9": "9",
-            "default": "•"
-        }
-    },
-
-    "niri/workspaces": {
-        "format": "{icon}",
-        "format-icons": {
-            "1": "1",
-            "2": "2",
-            "3": "3",
-            "4": "4",
-            "5": "5",
-            "6": "6",
-            "default": "•"
+            "7": "7"
+            // "8": "8",
+            // "9": "9",
+            // "default": "•"
         }
     },
     "custom/media": {
@@ -116,42 +104,6 @@
         "interval": 2,
         "escape": true
     },
-    "mpris": {
-        "format": "  {status_icon} | {dynamic}",
-        "format-disconnected": "  ▶ | No players",
-        "interval": 1,
-        "dynamic-len": 40,
-        "status-icons": {
-            "playing": "⏸",
-            "paused": "▶",
-            "stopped": ""
-        },
-        "dynamic-order": ["artist", "title"]
-    },
-
-
-    "group/windows": {
-        "orientation":"horizontal",
-        "modules":[
-            "custom/openbracket",
-            "hyprland/window",
-            "custom/closebracket"
-        ]
-    },
-    "hyprland/window": {
-        "format": "{title}", 
-        "max-length": 20,
-        "min-length": 0,
-        "all-outputs": true
-    },
-    "niri/window": {
-        "format": "{title}", 
-        "max-length": 20,
-        "min-length": 0,
-        "all-outputs": true
-    },
-
-
     "group/cpuram": {
         "orientation": "horizontal",
         "modules": [
@@ -174,17 +126,6 @@
         "interval": 2,
         "on-click": "kitty -e btop"
     },
-
-    "group/brightvol": {
-        "orientation": "horizontal",
-        "modules": [
-            "custom/openbracket",
-            "backlight",
-            "custom/split",
-            "wireplumber",
-            "custom/closebracket"
-        ]
-    },
     "wireplumber": {
         "scroll-step": 5,
         "on-click": "pavucontrol",
@@ -202,13 +143,6 @@
             "default": ["", ""]
         }
     },
-    "backlight": {
-        "format": "{icon} {percent}%",
-        
-        "format-icons": ["󰃞", "󰃠"]
-        // "on-click": "~/.config/waybar/scripts/brightness_slider.sh"  
-    },
-
     "group/system": {
         "orientation": "horizontal",
         "modules": [
@@ -234,11 +168,6 @@
         "format": "{:%I:%M}",
         "tooltip-format": "<big>{:%d %A}</big>\n<tt><small>{calendar}</small></tt>",
         "on-click" : "kalender"
-    },
-    "custom/clipboard": {
-        "format": "",
-        "tooltip": false,
-        "on-click": "~/.config/waybar/scripts/clipboard_menu.sh"
     },
     "battery": {
         "bat": "BAT0",
