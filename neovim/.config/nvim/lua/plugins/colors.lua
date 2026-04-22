@@ -8,13 +8,13 @@ end
 
 return {
 	{
-		"ellisonleao/gruvbox.nvim",
-		name = "gruvbox",
+		"catppuccin/nvim",
+		name = "catppuccin",
 		lazy = false,
         opts = {},
 		config = function()
             vim.o.background = "dark"
-			vim.cmd.colorscheme("gruvbox")
+			vim.cmd.colorscheme("catppuccin-mocha")
 			enable_transparency()
 		end
 	},
