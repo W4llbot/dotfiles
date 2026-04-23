@@ -132,6 +132,7 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 alias ff="fastfetch"
+alias cmatrix="cmatrix -C blue"
 ff
 
 # DWM related

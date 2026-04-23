@@ -10,7 +10,7 @@ set $rofi_cmd rofi
 set $menu $rofi_cmd -show drun
 
 ### Output configuration
-output * bg /usr/share/backgrounds/default.jxl fill
+output * bg ~/dotfiles/wallpapers/city-horizon.jpg fill
 
 output eDP-1  resolution 1920x1080 position 1920,0
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -23,6 +23,52 @@ before-sleep 'swaylock -f -c 000000'
 # This will lock your screen after 300 seconds of inactivity, then turn off
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
+
+set $outer 4
+set $inner 8
+
+font JetBrainsMono 10 
+gaps inner $inner
+gaps outer $outer
+default_border pixel 3
+default_floating_border pixel 3
+
+# Target colors (Catppuccin Mocha)
+set $rosewater #f5e0dc
+set $flamingo  #f2cdcd
+set $pink      #f5c2e7
+set $mauve     #cba6f7
+set $red       #f38ba8
+set $maroon    #eba0ac
+set $peach     #fab387
+set $yellow    #f9e2af
+set $green     #a6e3a1
+set $teal      #94e2d5
+set $sky       #89dceb
+set $sapphire  #74c7ec
+set $blue      #89b4fa
+set $lavender  #b4befe
+set $text      #cdd6f4
+set $subtext1  #bac2de
+set $subtext0  #a6adc8
+set $overlay2  #9399b2
+set $overlay1  #7f849c
+set $overlay0  #6c7086
+set $surface2  #585b70
+set $surface1  #45475a
+set $surface0  #313244
+set $base      #1e1e2e
+set $mantle    #181825
+set $crust     #11111b
+
+# class                 border    backgr.   text    indicator child_border
+client.focused          $lavender $base     $text   $lavender $lavender
+client.focused_inactive $overlay0 $base     $text   $rosewater $overlay0
+client.unfocused        $overlay0 $base     $text   $rosewater $overlay0
+client.urgent           $red      $base     $red    $peach     $red
+client.placeholder      $overlay0 $base     $text   $rosewater $overlay0
+client.focused_tab_title $base    $lavender $text
+# client.background       $base
 
 ### Input configuration
 input "type:touchpad" {
@@ -45,6 +91,15 @@ input "type:keyboard" {
     bindsym $mod+Return exec $term
     bindsym $mod+q kill
     bindsym $mod+d exec $menu
+
+    bindsym $mod+Print exec grimshot --notify save area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+
+    bindsym $mod+w exec killall -SIGUSR1 waybar
+
+    # Set gaps to 0 (Off)
+    bindsym $mod+shift+g gaps inner all set 0, gaps outer all set 0
+    # Set gaps to 10 (On)
+    bindsym $mod+g gaps inner all set $inner, gaps outer all set $outer
 
     # Drag floating windows by holding down $mod and left mouse button.
     # Resize them with right mouse button + $mod.
