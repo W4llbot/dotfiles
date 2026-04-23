@@ -18,7 +18,7 @@ return {
                                 "ts_ls",
                                 "clangd",
                                 "pyright",
-                                "gopls",
+                                -- "gopls",
                                 "bashls",
                                 "html",
                                 "cssls",
