@@ -131,7 +131,8 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-alias ff="fastfetch"
+# alias ff="fastfetch"
+alias ff="fastfetch --config examples/32"
 alias cmatrix="cmatrix -C blue"
 ff
 
