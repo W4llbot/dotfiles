@@ -6,11 +6,13 @@ set $up k
 set $right l
 
 set $term kitty
+set $browser firefox
+set $file thunar
 set $rofi_cmd rofi
 set $menu $rofi_cmd -show drun
 
 ### Output configuration
-output * bg ~/dotfiles/wallpapers/city-horizon.jpg fill
+output * bg ~/dotfiles/wallpapers/train.png fill
 
 output eDP-1  resolution 1920x1080 position 1920,0
 # You can get the names of your outputs by running: swaymsg -t get_outputs
@@ -24,14 +26,14 @@ before-sleep 'swaylock -f -c 000000'
 # your displays after another 300 seconds, and turn your screens back on when
 # resumed. It will also lock your screen before your computer goes to sleep.
 
-set $outer 4
-set $inner 8
+set $outer 16
+set $inner 16
 
 font JetBrainsMono 10 
-gaps inner $inner
-gaps outer $outer
-default_border pixel 3
-default_floating_border pixel 3
+# gaps inner $inner
+# gaps outer $outer
+default_border pixel 2
+default_floating_border pixel 2
 
 # Target colors (Catppuccin Mocha)
 set $rosewater #f5e0dc
@@ -89,16 +91,18 @@ input "type:keyboard" {
 
 ### Key bindings
     bindsym $mod+Return exec $term
-    bindsym $mod+q kill
+    bindsym $mod+Tab exec $browser
+    bindsym $mod+e exec $file
     bindsym $mod+d exec $menu
+    
+    bindsym $mod+q kill
 
     bindsym $mod+Print exec grimshot --notify save area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
     bindsym $mod+w exec killall -SIGUSR1 waybar
 
-    # Set gaps to 0 (Off)
+    # toggle gaps
     bindsym $mod+shift+g gaps inner all set 0, gaps outer all set 0
-    # Set gaps to 10 (On)
     bindsym $mod+g gaps inner all set $inner, gaps outer all set $outer
 
     # Drag floating windows by holding down $mod and left mouse button.
@@ -111,7 +115,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+r reload, 
     bindsym $mod+Shift+w exec killall waybar && waybar
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
-#
+
 # Moving around:
 #
     # Move your focus around
