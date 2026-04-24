@@ -9,7 +9,7 @@ set $term kitty
 set $browser firefox
 set $file thunar
 set $rofi_cmd rofi
-set $menu $rofi_cmd -show drun
+set $menu pkill $rofi_cmd || $rofi_cmd -show drun
 set $logout wlogout
 set $red wlsunset
 
@@ -95,7 +95,7 @@ input "type:keyboard" {
     bindsym $mod+Return exec $term
     bindsym $mod+Tab exec $browser
     bindsym $mod+e exec $file
-    bindsym $mod+d exec $menu
+    bindsym $mod+Space exec $menu
     
     bindsym $mod+q kill
 
