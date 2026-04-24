@@ -143,8 +143,6 @@ alias mdwm="cd ~/dotfiles/dwm/dwm/ && sudo make clean install && cd -"
 # use neovim as default man reader
 export MANPAGER="nvim +Man!"
 
-export GTK_THEME=Adwaita:dark
-
 # Yazi wrapper
 function y() {
 	local tmp="$(mktemp -t "yazi-cwd.XXXXXX")" cwd

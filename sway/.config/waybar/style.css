@@ -27,7 +27,11 @@
     margin: 0px 0 10px 0;
     min-width: 0;
     border: 2px solid #b4befe;
-    border-right: none;
+}
+
+#mode,
+#scratchpad {
+    border-left: none;
 }
 
 #mpris {
