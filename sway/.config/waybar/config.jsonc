@@ -1,200 +1,200 @@
 {
-  "layer": "top",
-  "position": "top",
-  "margin-bottom": -10,
-  "spacing": 0,
-  "modules-left": [
-    "sway/workspaces",
-    "sway/scratchpad",
-    "sway/mode",
-    "mpris"
-  ],
-  "modules-center": [
-    "clock"
-  ],
-  "modules-right": [
-    "cpu",
-    "memory",
-    "bluetooth",
-    "network",
+    "layer": "top",
+    "position": "top",
+    "margin-bottom": -10,
+    "spacing": 0,
+    "modules-left": [
+        "sway/workspaces",
+        "sway/scratchpad",
+        "sway/mode",
+        "mpris"
+    ],
+    "modules-center": [
+        "clock"
+    ],
+    "modules-right": [
+        "cpu",
+        "memory",
+        "idle_inhibitor",
+        "bluetooth",
+        "network",
     // "pulseaudio",
     // "backlight",
-    "idle_inhibitor",
     "battery",
     "battery#bat2",
     "custom/power"
-  ],
-  "sway/workspaces": {
-    "disable-scroll": false,
-    "all-outputs": true,
-    "format": "{name}",
-    "format-icons": {
-      "active": "",
-      "default": ""
-    }
-  },
-  "sway/scratchpad": {
-      "format": "{icon} ",
+    ],
+    "sway/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name}",
+        "format-icons": {
+            "active": "",
+            "default": ""
+        }
+    },
+    "sway/scratchpad": {
+        "format": "{icon} ",
       //"show-empty": false,
       "format-icons": ["", ""],
       "tooltip": true,
       "tooltip-format": "{app}: {title}"
-  },
-  "sway/mode": {
-      "format": "{}",
-      "max-length": 50
-  },
-  "mpris": {
-      "interval": 1,
-      "format": "{player_icon} {dynamic}",
-      "format-paused": "{status_icon} <i>{dynamic}</i>",
-      "dynamic-order": ["artist", "title"],
-      "dynamic-len": 50,
-      "player-icons": {
-          "default": "⏸",
-          "mpv": "🎵"
-      },
-      "status-icons": {
-          "paused": "▶"
-      },
-      "ignored-players": ["firefox"]
-  },
-  "clock": {
-    "format": "{:%H:%M}",
-    "interval": 60,
-    "tooltip-format": "<tt><small>{calendar}</small></tt>",
-    "calendar": {
-        "mode"          : "year",
-        "mode-mon-col"  : 3,
-        "weeks-pos"     : "right",
-        "on-scroll"     : 1,
-        "format": {
-            "months":     "<span color='#ffead3'><b>{}</b></span>",
-            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
-            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
-            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
-            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+    },
+    "sway/mode": {
+        "format": "{}",
+        "max-length": 50
+    },
+    "mpris": {
+        "interval": 1,
+        "format": "{player_icon} | {dynamic}",
+        "format-paused": "{status_icon} | <i>{dynamic}</i>",
+        "dynamic-order": ["artist", "title"],
+        "dynamic-len": 50,
+        "player-icons": {
+            "default": "  ⏸",
+            // "mpv": "  "
+        },
+        "status-icons": {
+            "paused": "  ▶"
+        },
+        "ignored-players": ["firefox"]
+    },
+    "clock": {
+        "format": "{:%H:%M}",
+        "interval": 60,
+        "tooltip-format": "<tt><small>{calendar}</small></tt>",
+        "calendar": {
+            "mode"          : "year",
+            "mode-mon-col"  : 3,
+            "weeks-pos"     : "right",
+            "on-scroll"     : 1,
+            "format": {
+                "months":     "<span color='#ffead3'><b>{}</b></span>",
+                "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+            }
+        },
+        "actions":  {
+            "on-click-right": "mode",
+            "on-scroll-up": "tz_up",
+            "on-scroll-down": "tz_down",
+            "on-scroll-up": "shift_up",
+            "on-scroll-down": "shift_down"
         }
     },
-    "actions":  {
-        "on-click-right": "mode",
-        "on-scroll-up": "tz_up",
-        "on-scroll-down": "tz_down",
-        "on-scroll-up": "shift_up",
-        "on-scroll-down": "shift_down"
-    }
-  },
-  "bluetooth": {
-      "format": "󰂲",
-      "format-on": "{icon}",
-      "format-off": "{icon}",
-      "format-connected": "{icon}",
-      "format-icons": {
-          "on": "󰂯",
-          "off": "󰂲",
-          "connected": "󰂱"
-      },
-      "on-click": "blueman-manager",
-      "tooltip-format": "{controller_alias}\t{controller_address} off ",
-      "tooltip-format-off": "{controller_alias}\t{controller_address} off ",
-      "tooltip-format-on": "{controller_alias}\t{controller_address} on ",
-      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
-      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
-  },
-  "network": {
-    "format-wifi": "󰤢 ",
-    "format-ethernet": "󰈀 ",
-    "format-disconnected": "󰤠 ",
-    "interval": 5,
-    "tooltip-format": "{essid} ({signalStrength}%)",
-    "on-click": "nm-connection-editor"
-  },
-  "cpu": {
-    "interval": 10,
-    "format": " {usage}%",
-    "on-click": "kitty -e btop"
-  },
-  "memory": {
-    "interval": 10,
-    "format": " {}%",
+    "bluetooth": {
+        "format": "󰂲",
+        "format-on": "{icon}",
+        "format-off": "{icon}",
+        "format-connected": "{icon}",
+        "format-icons": {
+            "on": "󰂯",
+            "off": "󰂲",
+            "connected": "󰂱"
+        },
+        "on-click": "blueman-manager",
+        "tooltip-format": "{controller_alias}\t{controller_address} off ",
+        "tooltip-format-off": "{controller_alias}\t{controller_address} off ",
+        "tooltip-format-on": "{controller_alias}\t{controller_address} on ",
+        "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
+    },
+    "network": {
+        "format-wifi": "󰤢 ",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰤠 ",
+        "interval": 5,
+        "tooltip-format": "{essid} ({signalStrength}%)",
+        "on-click": "nm-connection-editor"
+    },
+    "cpu": {
+        "interval": 10,
+        "format": " {usage}%",
+        "on-click": "kitty -e btop"
+    },
+    "memory": {
+        "interval": 10,
+        "format": " {}%",
     // "tooltip-format": "Memory",
     "on-click": "kitty -e btop"
-  },
-  "backlight": {
-    "format": "{icon}  {percent}%",
-    "format-icons": [
-      "",
-      "󰃜",
-      "󰃛",
-      "󰃞",
-      "󰃝",
-      "󰃟",
-      "󰃠"
-    ],
-    "tooltip": false
-  },
-  "pulseaudio": {
-    "format": "{icon}  {volume}%",
-    "format-muted": "",
-    "format-icons": {
-      "default": [
-        "",
-        "",
-        " "
-      ]
     },
-    "on-click": "pavucontrol"
-  },
-  "battery": {
-    "bat": "BAT0",
-    "interval": 2,
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "backlight": {
+        "format": "{icon}  {percent}%",
+        "format-icons": [
+            "",
+            "󰃜",
+            "󰃛",
+            "󰃞",
+            "󰃝",
+            "󰃟",
+            "󰃠"
+        ],
+        "tooltip": false
     },
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "battery#bat2": {
-    "bat": "BAT1",
-    "interval": 2,
-    "states": {
-      "warning": 30,
-      "critical": 15
+    "pulseaudio": {
+        "format": "{icon}  {volume}%",
+        "format-muted": "",
+        "format-icons": {
+            "default": [
+                "",
+                "",
+                " "
+            ]
+        },
+        "on-click": "pavucontrol"
     },
-    "format": "{icon} {capacity}%",
-    "format-full": "{icon} {capacity}%",
-    "format-charging": " {capacity}%",
-    "format-plugged": " {capacity}%",
-    "format-alt": "{icon} {time}",
-    "format-icons": [
-      "",
-      "",
-      "",
-      "",
-      ""
-    ]
-  },
-  "idle_inhibitor": {
-      "format": "{icon} ",
-      "format-icons": {
-          "activated": "",
-          "deactivated": ""
-      }
-  },
-  "custom/power": {
-      "format": "󰐥 ",
-      "tooltip-format": "Power Options",
-      "on-click": "wlogout"
-  }
+    "battery": {
+        "bat": "BAT0",
+        "interval": 2,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "battery#bat2": {
+        "bat": "BAT1",
+        "interval": 2,
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{icon} {capacity}%",
+        "format-full": "{icon} {capacity}%",
+        "format-charging": " {capacity}%",
+        "format-plugged": " {capacity}%",
+        "format-alt": "{icon} {time}",
+        "format-icons": [
+            "",
+            "",
+            "",
+            "",
+            ""
+        ]
+    },
+    "idle_inhibitor": {
+        "format": "{icon} ",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "custom/power": {
+        "format": "󰐥",
+        "tooltip-format": "Power Options",
+        "on-click": "wlogout"
+    }
 }

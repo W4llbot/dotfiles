@@ -1,19 +1,19 @@
 /* --- Global Styles --- */
 * {
-  font-family: "JetBrainsMono Nerd Font";
-  font-size: 15px;
-  min-height: 0;
-  padding-right: 0px;
-  padding-left: 0px;
-  padding-bottom: 0px;
+    font-family: "JetBrainsMono Nerd Font";
+    font-size: 15px;
+    min-height: 0;
+    padding-right: 0px;
+    padding-left: 0px;
+    padding-bottom: 0px;
 }
 
 /* --- Waybar Container --- */
 #waybar {
-  background: transparent;
-  color: #ccd6f4;
-  margin: 0px;
-  font-weight: 500;
+    background: transparent;
+    color: #ccd6f4;
+    margin: 0px;
+    font-weight: 500;
 }
 
 /* --- Left Modules --- */
@@ -22,16 +22,16 @@
 #scratchpad,
 #mode,
 #mpris {
-  background-color: rgba(26, 27, 38, 0.5);
-  padding: 0.3rem 0.7rem;
-  margin: 0px 0 10px 0;
-  min-width: 0;
-  border: 2px solid #b4befe;
-  border-right: none;
+    background-color: rgba(26, 27, 38, 0.5);
+    padding: 0.3rem 0.7rem;
+    margin: 0px 0 10px 0;
+    min-width: 0;
+    border: 2px solid #b4befe;
+    border-right: none;
 }
 
 #mpris {
-  border-right: 2px solid #b4befe;
+    border-right: 2px solid #b4befe;
 }
 
 #mpris.playing {
@@ -41,47 +41,47 @@
 }
 
 #workspaces {
-  padding: 0;
-  margin-left: 0px;
-  margin-right: 0px;
+    padding: 0;
+    margin-left: 0px;
+    margin-right: 0px;
 }
 
 #workspaces button {
-  border-radius: 0;
-  padding: 0.3rem 0.3em;
-  background: transparent;
-  transition: all 0.2s ease-in-out;
-  border: none;
-  outline: none;
+    border-radius: 0;
+    padding: 0.3rem 0.3em;
+    background: transparent;
+    transition: all 0.2s ease-in-out;
+    border: none;
+    outline: none;
 }
 
 #workspaces button.focused {
-  color: #99d1db;
-  background-color: rgba(153, 209, 219, 0.1);
+    color: #99d1db;
+    background-color: rgba(153, 209, 219, 0.1);
 }
 
 #workspaces button.urgent {
-  color: #e78284;
-  background-color: rgba(231, 130, 132, 0.1);
+    color: #e78284;
+    background-color: rgba(231, 130, 132, 0.1);
 }
 
 #workspaces button:hover {
-  background: rgb(41, 42, 53);
-  color: #c6d0f5;
+    background: rgb(41, 42, 53);
+    color: #c6d0f5;
 }
 
 /* --- Center Module --- */
 #clock {
-  background-color: rgba(26, 27, 38, 0.5);
-  padding: 0.3rem 3rem;
-  letter-spacing: 3rem;
-  margin: 0px 0px 10px 0;
-  border: 2px solid #b4befe;
-  min-width: 0;
+    background-color: rgba(26, 27, 38, 0.5);
+    padding: 0.3rem 2rem;
+    letter-spacing: 2rem;
+    margin: 0px 0px 10px 0;
+    border: 2px solid #b4befe;
+    min-width: 0;
 }
 
 #clock:hover {
-  background-color: rgba(153, 209, 219, 0.1);
+    background-color: rgba(153, 209, 219, 0.1);
 }
 
 /* --- Right Modules --- */
@@ -94,28 +94,36 @@
 #backlight,
 #network,
 #battery {
-  border-top: 2px solid #b4befe;
-  border-bottom: 2px solid #b4befe;
-  background-color: rgba(26, 27, 38, 0.5);
-  padding: 0.3rem 0.7rem;
-  margin: 0 0 10px 0;
-  border-radius: 0;
-  min-width: 0;
+    border-top: 2px solid #b4befe;
+    border-bottom: 2px solid #b4befe;
+    background-color: rgba(26, 27, 38, 0.5);
+    padding: 0.3rem 0.7rem;
+    margin: 0 0 10px 0;
+    border-radius: 0;
+    min-width: 0;
 }
 
-/* #cpu { */
-/*     border-left: 2px solid #b4befe; */
-/* }  */
-#cpu,
-#memory {
-    background-color: #b4befe;
-    color: #1e1e2e;
-    border: none;
-}
+#custom-power,
+#cpu {
+    border-left: 2px solid #b4befe;
+} 
 
+/* #cpu, */
+/* #memory { */
+/*     background-color: #b4befe; */
+/*     color: #1e1e2e; */
+/*     border: none; */
+/* } */
+
+#memory,
+#network,
 #custom-power {
     border-right: 2px solid #b4befe;
 } 
+
+#custom-power {
+    padding-right: 0.9rem;
+}
 
 #cpu:hover,
 #memory:hover,
@@ -126,11 +134,11 @@
 #backlight:hover,
 #network:hover,
 #battery:hover {
-  background-color: rgba(153, 209, 219, 0.1);
+    background-color: rgba(153, 209, 219, 0.1);
 }
 
 #bluetooth {
-  margin-left: 0px;
+    margin-left: 0px;
 }
 
 /* --- Colors --- */
@@ -138,8 +146,8 @@
 /*   color: #c6d0f5; */
 /* } */
 #clock {
-  /* color: #99d1db; */
-  font-weight: 900;
+    /* color: #99d1db; */
+    font-weight: 900;
 }
 /* #pulseaudio { */
 /*   color: #c6d0f5; */
@@ -167,19 +175,19 @@
 /*   color: #99d1db; */
 /* } */
 #battery.charging {
-  color: #a6d189;
+    color: #a6d189;
 }
 #battery.warning:not(.charging) {
-  color: #e78284;
+    color: #e78284;
 }
 
 /* --- Tooltip Styles --- */
 tooltip {
-  background-color: rgba(26, 27, 38, 0.5);
-  color: #dddddd;
-  padding: 5px 12px;
-  margin: 5px 0px;
-  /* border-radius: 6px; */
-  border: 2px solid rgba(255, 255, 255, 0.1);
-  font-size: 12px;
+    background-color: rgba(26, 27, 38, 0.5);
+    color: #dddddd;
+    padding: 5px 12px;
+    margin: 5px 0px;
+    /* border-radius: 6px; */
+    border: 2px solid rgba(255, 255, 255, 0.1);
+    font-size: 12px;
 }

@@ -10,6 +10,7 @@ set $browser firefox
 set $file thunar
 set $rofi_cmd rofi
 set $menu $rofi_cmd -show drun
+set $logout wlogout
 
 ### Output configuration
 output * bg ~/dotfiles/wallpapers/train.png fill
@@ -117,6 +118,7 @@ input "type:keyboard" {
     bindsym $mod+Shift+r reload, 
     bindsym $mod+Shift+w exec killall waybar && waybar
     bindsym $mod+Shift+e exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    bindsym $mod+Control+Shift+l exec $logout
 
 # Moving around:
 #
