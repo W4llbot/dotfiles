@@ -11,6 +11,7 @@ set $file thunar
 set $rofi_cmd rofi
 set $menu $rofi_cmd -show drun
 set $logout wlogout
+set $red wlsunset
 
 ### Output configuration
 output * bg ~/dotfiles/wallpapers/train.png fill
@@ -98,9 +99,14 @@ input "type:keyboard" {
     
     bindsym $mod+q kill
 
+    # Screenshot binds
     bindsym $mod+Print exec grimshot --notify save output ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
     bindsym $mod+Shift+Print exec grimshot --notify copy area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
     bindsym $mod+Shift+Control+Print exec grimshot --notify copy window ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+
+    # Redshift
+    bindsym $mod+n exec wlsunset -t 3000 -T 3001
+    bindsym $mod+Shift+n exec pkill wlsunset
 
     bindsym $mod+w exec killall -SIGUSR1 waybar
 
@@ -184,13 +190,13 @@ input "type:keyboard" {
     bindsym $mod+s layout toggle split
 
     # Make the current focus fullscreen
-    bindsym $mod+f fullscreen
+    bindsym $mod+Control+Shift+f fullscreen
 
     # Toggle the current focus between tiling and floating mode
-    bindsym $mod+Shift+space floating toggle
+    bindsym $mod+Shift+f floating toggle
 
     # Swap focus between the tiling area and the floating area
-    bindsym $mod+space focus mode_toggle
+    bindsym $mod+f focus mode_toggle
 
     # Move focus to the parent container
     bindsym $mod+a focus parent
