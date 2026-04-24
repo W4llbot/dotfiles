@@ -97,7 +97,9 @@ input "type:keyboard" {
     
     bindsym $mod+q kill
 
-    bindsym $mod+Print exec grimshot --notify save area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+    bindsym $mod+Print exec grimshot --notify save output ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+    bindsym $mod+Shift+Print exec grimshot --notify copy area ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
+    bindsym $mod+Shift+Control+Print exec grimshot --notify copy window ~/Pictures/Screenshots/$(date +%Y-%m-%d_%H-%m-%s).png
 
     bindsym $mod+w exec killall -SIGUSR1 waybar
 

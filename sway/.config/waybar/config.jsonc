@@ -5,6 +5,8 @@
   "spacing": 0,
   "modules-left": [
     "sway/workspaces",
+    "sway/scratchpad",
+    "sway/mode",
     "mpris"
   ],
   "modules-center": [
@@ -31,24 +33,23 @@
       "default": ""
     }
   },
-  "idle_inhibitor": {
+  "sway/scratchpad": {
       "format": "{icon} ",
-      "format-icons": {
-          "activated": "",
-          "deactivated": ""
-      }
+      //"show-empty": false,
+      "format-icons": ["", ""],
+      "tooltip": true,
+      "tooltip-format": "{app}: {title}"
   },
-  "custom/power": {
-      "format": "󰐥 ",
-      "tooltip": "Power Options",
-      "on-click": "wlogout"
+  "sway/mode": {
+      "format": "{}",
+      "max-length": 50
   },
   "mpris": {
       "interval": 1,
       "format": "{player_icon} {dynamic}",
       "format-paused": "{status_icon} <i>{dynamic}</i>",
       "dynamic-order": ["artist", "title"],
-      "dynamic-len": 20,
+      "dynamic-len": 50,
       "player-icons": {
           "default": "⏸",
           "mpv": "🎵"
@@ -60,8 +61,28 @@
   },
   "clock": {
     "format": "{:%H:%M}",
-    "interval": 2
-    // "tooltip
+    "interval": 60,
+    "tooltip-format": "<tt><small>{calendar}</small></tt>",
+    "calendar": {
+        "mode"          : "year",
+        "mode-mon-col"  : 3,
+        "weeks-pos"     : "right",
+        "on-scroll"     : 1,
+        "format": {
+            "months":     "<span color='#ffead3'><b>{}</b></span>",
+            "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+            "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+            "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+            "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+        }
+    },
+    "actions":  {
+        "on-click-right": "mode",
+        "on-scroll-up": "tz_up",
+        "on-scroll-down": "tz_down",
+        "on-scroll-up": "shift_up",
+        "on-scroll-down": "shift_down"
+    }
   },
   "bluetooth": {
       "format": "󰂲",
@@ -70,11 +91,15 @@
       "format-connected": "{icon}",
       "format-icons": {
           "on": "󰂯",
-      "off": "󰂲",
-      "connected": "󰂱"
-    },
-    "on-click": "blueman-manager",
-    "tooltip-format-connected": "{device_enumerate}"
+          "off": "󰂲",
+          "connected": "󰂱"
+      },
+      "on-click": "blueman-manager",
+      "tooltip-format": "{controller_alias}\t{controller_address} off ",
+      "tooltip-format-off": "{controller_alias}\t{controller_address} off ",
+      "tooltip-format-on": "{controller_alias}\t{controller_address} on ",
+      "tooltip-format-connected": "{controller_alias}\t{controller_address}\n\n{device_enumerate}",
+      "tooltip-format-enumerate-connected": "{device_alias}\t{device_address}"
   },
   "network": {
     "format-wifi": "󰤢 ",
@@ -86,7 +111,7 @@
   },
   "cpu": {
     "interval": 10,
-    "format": " {}%",
+    "format": " {usage}%",
     "on-click": "kitty -e btop"
   },
   "memory": {
@@ -159,5 +184,17 @@
       "",
       ""
     ]
+  },
+  "idle_inhibitor": {
+      "format": "{icon} ",
+      "format-icons": {
+          "activated": "",
+          "deactivated": ""
+      }
+  },
+  "custom/power": {
+      "format": "󰐥 ",
+      "tooltip-format": "Power Options",
+      "on-click": "wlogout"
   }
 }
