@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="robbyrussell"
-# ZSH_THEME="powerlevel10k/powerlevel10k"
+# ZSH_THEME="robbyrussell"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -132,13 +132,16 @@ alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
 # alias ff="fastfetch"
-alias ff="fastfetch --config examples/32"
+# alias ff="fastfetch --config examples/32"
 alias cmatrix="cmatrix -C blue"
-ff
+# ff
 
 # DWM related
-alias cdwm="nvim ~/dotfiles/dwm/dwm/config.h"
-alias mdwm="cd ~/dotfiles/dwm/dwm/ && sudo make clean install && cd -"
+# alias cdwm="nvim ~/dotfiles/dwm/dwm/config.h"
+# alias mdwm="cd ~/dotfiles/dwm/dwm/ && sudo make clean install && cd -"
+
+# Add nvim to path
+export PATH="$PATH:/opt/nvim-linux-x86_64/bin"
 
 # use neovim as default man reader
 export MANPAGER="nvim +Man!"
@@ -154,3 +157,6 @@ function y() {
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 # [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
