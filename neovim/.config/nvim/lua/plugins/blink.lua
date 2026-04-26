@@ -1,9 +1,11 @@
 -- Has to be here! Blink stops working when "config" function is used
 vim.api.nvim_set_hl(0, 'BlinkCmpSignatureHelpActiveParameter', { link = 'Search' })
+-- vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { link = 'Pmenu' })
+vim.api.nvim_set_hl(0, 'BlinkCmpMenuBorder', { bg = 'none' })
 
 return {
     "saghen/blink.cmp",
-    version = "1.*", -- Use a release tag to download pre-built binaries
+    version = "1.*",
     opts = {
         enabled = function()
             -- Disable in prompt buffers (REPL) to prevent the "context" error
@@ -13,9 +15,9 @@ return {
             -- you can add a check for the DAP buffer here
             -- or require("cmp_dap").is_dap_buffer()
         end,
-        keymap = { preset = 'default' }, -- Sets default keymaps for completion
+        keymap = { preset = 'default' },
         appearance = {
-            use_nvim_cmp_as_default = true, -- Fallback for icons/highlights
+            use_nvim_cmp_as_default = true,
             nerd_font_variant = 'mono'
         },
         completion = {
@@ -23,8 +25,8 @@ return {
                 auto_show = true
             },
             documentation = {
-                auto_show = true,          -- Show documentation for the selected item automatically
-                --auto_show_delay_ms = 200,   -- Delay before showing the window
+                auto_show = true,
+                auto_show_delay_ms = 200,
             },
         },
         sources = {

@@ -12,6 +12,8 @@ int main() {
 	int b = 10;
 	int sum = foo(a, b);
 
+    foo(foo(a, b), foo(a, b));
+
 	printf("Hello from nvim!, and the sum is %d", sum);
 
         point p = { 1, 3 };
