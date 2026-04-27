@@ -3,28 +3,32 @@
 int foo(int a, int b);
 
 typedef struct {
-        int x;
-        int y;
+    int x;
+    int y;
 } point;
 
 int main() {
-	int a = 5;
-	int b = 10;
-	int sum = foo(a, b);
+    int a = 5;
+    int b = 10;
+    int sum = foo(a, b);
 
     foo(foo(a, b), foo(a, b));
 
-	printf("Hello from nvim!, and the sum is %d", sum);
+    printf("Hello from nvim!, and the sum is %d", sum);
 
-        point p = { 1, 3 };
+    point p = {1, 3};
 
-	return 0;
+    switch (sum) {
+    case 1:
+        foo(a, b);
+        break;
+    default:
+        break;
+    }
+
+    return 0;
 }
 
-int foo(int a, int b) {
-	return a + b;
-}
+int foo(int a, int b) { return a + b; }
 
-int fun() {
-        return 1;
-}
+int fun() { return 1; }
