@@ -2,14 +2,18 @@ vim.g.mapleader = " "
 vim.g.maplocalleader = " "
 
 -- Save with leader+w
-vim.keymap.set("n", "<Leader>w", ":w<CR>", { desc = "Write to current buffer" } )
+vim.keymap.set("n", "<Leader>w", ":w<CR>", { desc = "Write to current buffer" })
 
--- Better window navigation
-vim.keymap.set({"n", "t"}, "<C-h>", "<C-w>h")
-vim.keymap.set({"n", "t"}, "<C-j>", "<C-w>j")
-vim.keymap.set({"n", "t"}, "<C-k>", "<C-w>k")
-vim.keymap.set({"n", "t"}, "<C-l>", "<C-w>l")
+-- System clipboard
+vim.keymap.set("n", "<Leader>y", '"+y', { desc = "Copy to system clipboard" })
+vim.keymap.set("n", "<Leader>d", '"+d', { desc = "Cut to system clipboard" })
+vim.keymap.set("n", "<Leader>p", '"+p', { desc = "Paste from system clipboard" })
 
+-- Move between windows with Ctrl + hjkl (now taken care of by vim-tmux-navigator)
+-- vim.keymap.set("n", "<C-h>", "<C-w>h", { desc = "Move to left window" })
+-- vim.keymap.set("n", "<C-j>", "<C-w>j", { desc = "Move to lower window" })
+-- vim.keymap.set("n", "<C-k>", "<C-w>k", { desc = "Move to upper window" })
+-- vim.keymap.set("n", "<C-l>", "<C-w>l", { desc = "Move to right window" })
 
 -- quickly enter netrw
 vim.keymap.set("n", "<leader>e", vim.cmd.Ex, { desc = "File Explorer" })
@@ -19,9 +23,9 @@ vim.keymap.set("t", "<Esc>", [[<C-\><C-n>]], { desc = "Exit terminal mode" })
 
 -- Raylib specific compile
 vim.keymap.set("n", "<leader>r", function()
-    vim.cmd("w")
+	vim.cmd("w")
 
-    vim.cmd("make && .\\bin\\Debug\\01-Pong.exe")
+	vim.cmd("make && .\\bin\\Debug\\01-Pong.exe")
 end, { desc = "Build and run Raylib project" })
 
 -- better movement in wrapped text
@@ -33,6 +37,7 @@ vim.keymap.set("n", "k", function()
 end, { expr = true, silent = true, desc = "Up (wrap-aware)" })
 
 vim.keymap.set("n", "<esc>", ":nohlsearch<CR>", { desc = "Clear search highlights" })
+
 vim.keymap.set("n", "n", "nzzzv", { desc = "Next search result (centered)" })
 vim.keymap.set("n", "N", "Nzzzv", { desc = "Previous search result (centered)" })
 vim.keymap.set("n", "<C-d>", "<C-d>zz", { desc = "Half page down (centered)" })

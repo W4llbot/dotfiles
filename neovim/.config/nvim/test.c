@@ -2,33 +2,25 @@
 
 int foo(int a, int b);
 
-typedef struct {
-    int x;
-    int y;
-} point;
+int calc_area(int w, int h);
 
 int main() {
-    int a = 5;
-    int b = 10;
-    int sum = foo(a, b);
+    int w, h;
 
-    foo(foo(a, b), foo(a, b));
+    printf("Enter a width: ");
+    scanf("%d", &w);
+    printf("Enter a height: ");
+    scanf("%d", &h);
 
-    printf("Hello from nvim!, and the sum is %d", sum);
+    int area = calc_area(w, h);
 
-    point p = {1, 3};
-
-    switch (sum) {
-    case 1:
-        foo(a, b);
-        break;
-    default:
-        break;
-    }
-
-    return 0;
+    printf("The area of the rectangle is: %d\n", area);
+    return (0);
 }
 
-int foo(int a, int b) { return a + b; }
+int calc_area(int w, int h) { return w * h; }
 
-int fun() { return 1; }
+int foo(int a, int b) {
+    int sum = a + b;
+    return sum;
+}

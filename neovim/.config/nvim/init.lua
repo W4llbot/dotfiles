@@ -13,6 +13,6 @@ require("wallbot")
 --})
 
 vim.diagnostic.config({
-    virtual_text = true,
-    -- other options like signs, update_in_insert, etc.
+	virtual_text = true,
+	-- other options like signs, update_in_insert, etc.
 })
