@@ -17,6 +17,9 @@ require('mini.pick').setup {}
 require('mini.extra').setup {}
 require('mini.sessions').setup {}
 
+-- Pass mini completion capabilities to lsp
+vim.lsp.config('*', {capabilities = MiniCompletion.get_lsp_capabilities()})
+
 -- Session keymaps
 vim.keymap.set('n', '<leader>ss', MiniSessions.select, { desc = 'Select Session' })
 vim.keymap.set('n', '<leader>sD', MiniSessions.delete, { desc = 'Delete current Session' })
