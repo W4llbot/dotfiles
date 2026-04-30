@@ -247,6 +247,8 @@ require('mini.indentscope').setup {}
 require('mini.trailspace').setup {}
 require('mini.statusline').setup {}
 
+vim.keymap.set('n', '<leader>ss', MiniSessions.select, { desc = 'Select Session' })
+vim.keymap.set('n', '<leader>sD', MiniSessions.delete, { desc = 'Delete current Session' })
 vim.keymap.set('n', '<leader>sw', function()
     local name = vim.fn.input("Enter session name: ")
     if name then
@@ -258,14 +260,15 @@ vim.keymap.set('n', '<leader>e', MiniFiles.open, { desc = 'Open mini.files' })
 vim.keymap.set('n', '<leader>ff', MiniPick.builtin.files, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fc', function()
     MiniPick.builtin.files({ source = { cwd = vim.fn.stdpath('config') } })
-end, { desc = 'Search Files' })
-vim.keymap.set('n', '<leader>fg', MiniPick.builtin.grep_live, { desc = 'Live Grep' })
+end, { desc = 'Find Config' })
+vim.keymap.set('n', '<leader>fg', MiniPick.builtin.grep_live, { desc = 'Find Grep' })
 vim.keymap.set('n', '<leader>fh', MiniPick.builtin.help, { desc = 'Find Help'})
 vim.keymap.set('n', '<leader>fb', MiniPick.builtin.buffers, { desc = 'Find Buffer' })
 vim.keymap.set('n', '<leader>ft', MiniExtra.pickers.colorschemes, { desc = 'Find Themes' })
+vim.keymap.set('n', '<leader>fi', MiniExtra.pickers.git_files, { desc = 'Find Git files' })
 vim.keymap.set('n', '<leader>fd', MiniExtra.pickers.diagnostic, { desc = 'Find Diagnostics' })
 vim.keymap.set('n', '<leader>fm', MiniExtra.pickers.marks, { desc = 'Find Marks' })
-vim.keymap.set('n', '<leader>fi', MiniExtra.pickers.hipatterns, { desc = 'Find Highlights' })
+vim.keymap.set('n', '<leader>fl', MiniExtra.pickers.hipatterns, { desc = 'Find Highlights' })
 vim.keymap.set('n', '<leader>fs', function()
     MiniExtra.pickers.lsp( { scope = 'document_symbol' })
 end, { desc = 'Find document Symbols' })
