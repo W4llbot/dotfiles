@@ -1,6 +1,12 @@
 -- DAP configs
 local dap = require("dap")
 
+vim.fn.sign_define('DapBreakpoint', { text='🛑' })
+vim.fn.sign_define('DapBreakpointCondition', { text='🔍' })
+vim.fn.sign_define('DapBreakpointRejected', { text='🚫' })
+vim.fn.sign_define('DapLogPoint', { text='📝' })
+vim.fn.sign_define('DapStopped', { text='➡️', texthl='', linehl='DapStopped', numhl='' })
+
 dap.adapters.gdb = {
     type = "executable",
     command = "gdb",
