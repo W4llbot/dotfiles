@@ -1,0 +1,14 @@
+{
+    "Header": {
+        "prefix": "once",
+        "body": [
+            "#ifndef ${1:FILE}_H",
+            "#define $1_H",
+            "",
+            "$0",
+            "",
+            "#endif"
+        ],
+        "description": "c header"
+    }
+}
