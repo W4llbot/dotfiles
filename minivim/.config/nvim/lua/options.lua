@@ -37,4 +37,4 @@ vim.opt.undofile      = true
 vim.opt.autoread      = true
 vim.opt.backspace     = 'indent,eol,start'
 vim.o.winborder       = 'rounded'
-vim.o.completeopt     = 'menu,menuone,noinsert'
+vim.o.completeopt     = 'fuzzy,menu,menuone,noinsert'

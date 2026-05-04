@@ -50,7 +50,7 @@ vim.keymap.set('n', '<leader>e', MiniFiles.open, { desc = 'Explore Files' })
 -- Picker keymaps
 vim.keymap.set('n', '<leader>ff', MiniPick.builtin.files, { desc = 'Find Files' })
 vim.keymap.set('n', '<leader>fc', function()
-    MiniPick.builtin.files({ source = { cwd = vim.fn.stdpath('config') } })
+    MiniPick.builtin.files(nil, { source = { cwd = vim.fn.stdpath('config') } })
 end, { desc = 'Find Config' })
 vim.keymap.set('n', '<leader>fg', MiniPick.builtin.grep_live, { desc = 'Find Grep' })
 vim.keymap.set('n', '<leader>fh', MiniPick.builtin.help, { desc = 'Find Help'})
