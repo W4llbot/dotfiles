@@ -7,6 +7,8 @@
     "spacing": 4, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
+        "custom/arch",
+        "idle_inhibitor",
         "hyprland/workspaces",
         "mpris"
     ],
@@ -15,7 +17,6 @@
         "clock"
     ],
     "modules-right": [
-        "idle_inhibitor",
         "pulseaudio",
         "network",
         "cpu",
@@ -25,11 +26,16 @@
         "custom/power"
     ],
     // Modules configuration
+    "custom/arch": {
+        "format": " 󰣇 ",
+        "tooltip-format": "btw",
+        "on-click": "pkill rofi || rofi -show drun"
+    },
     "hyprland/workspaces": {
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "  {name}  ",
         "format-icons": {
             "1": "",
             "2": "",
@@ -51,13 +57,14 @@
         "status-icons": {
             "paused": "🎵 ▶"
         },
+        "dynamic-order": ["artist", "title"],
     "ignored-players": ["firefox"]
     },
     "hyprland/mode": {
         "format": "<span style=\"italic\">{}</span>"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -125,21 +132,23 @@
     },
     "network": {
         // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-wifi": "{signalStrength}% ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
+        "tooltip-format": "{essid} {ifname} via {gwaddr} ",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}"
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon} {format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": " {format_source}",
-        "format-source": "",
-        "format-source-muted": "",
+        "format": "{volume}% {icon}{format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": "{format_source}",
+        "format-source": "",
+        "format-source-muted": "",
+        // "format-source": "",
+        // "format-source-muted": "",
         "format-icons": {
             "headphone": "",
             "hands-free": "",

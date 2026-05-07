@@ -149,4 +149,4 @@ function y() {
 	rm -f -- "$tmp"
 }
 
-fastfetch
+# fastfetch
