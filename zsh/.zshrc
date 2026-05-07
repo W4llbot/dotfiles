@@ -103,6 +103,8 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+alias ff="fastfetch"
+
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 
@@ -147,3 +149,4 @@ function y() {
 	rm -f -- "$tmp"
 }
 
+fastfetch

@@ -40,6 +40,10 @@
       "rev": "cdc07ac78467a233fd62c493de29a17e0cf2b2b6",
       "src": "https://github.com/folke/tokyonight.nvim"
     },
+    "undotree": {
+      "rev": "2c0a3c9488a8230213297cd573922ba6238f0c39",
+      "src": "https://github.com/jiaoshijie/undotree"
+    },
     "vim-tmux-navigator": {
       "rev": "e41c431a0c7b7388ae7ba341f01a0d217eb3a432",
       "src": "https://github.com/christoomey/vim-tmux-navigator"
