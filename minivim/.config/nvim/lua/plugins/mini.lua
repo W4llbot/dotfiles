@@ -5,8 +5,8 @@ require('mini.ai').setup {}
 require('mini.align').setup{}
 require('mini.splitjoin').setup {}
 require('mini.comment').setup {}
-require('mini.move').setup {}
-require('mini.pairs').setup {}
+-- require('mini.move').setup {}
+-- require('mini.pairs').setup {}
 
 -- Snippets setup
 local gen_loader = require('mini.snippets').gen_loader
