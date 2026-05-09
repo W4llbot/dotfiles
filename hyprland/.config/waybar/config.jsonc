@@ -21,6 +21,7 @@
         "network",
         "cpu",
         "memory",
+        "power-profiles-daemon",
         "battery",
         "battery#bat2",
         "custom/power"
@@ -102,6 +103,17 @@
     "memory": {
         "format": "{}% ",
         "on-click": "kitty -e btop"
+    },
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
     },
     "battery": {
         "bat": "BAT0",
