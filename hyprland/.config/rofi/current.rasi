@@ -24,6 +24,8 @@ window {
     width:      720;
 
     background-color:   @bg0;
+    border: 2px;
+    border-color: @accent-color;
 }
 
 inputbar {
