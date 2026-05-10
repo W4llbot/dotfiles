@@ -104,6 +104,8 @@ fi
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
 alias ff="fastfetch"
+alias spotify="spotify_player"
+alias clock="tty-clock -c -C 4"
 
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
