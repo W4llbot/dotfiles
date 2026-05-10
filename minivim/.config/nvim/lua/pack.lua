@@ -19,7 +19,8 @@ vim.pack.add({
     -- Others
     'https://github.com/nvim-mini/mini.nvim',
     'https://github.com/christoomey/vim-tmux-navigator',
-    'https://github.com/jiaoshijie/undotree'
+    'https://github.com/jiaoshijie/undotree',
+    'https://github.com/MeanderingProgrammer/render-markdown.nvim',
 })
 
 require 'plugins.colors'
@@ -28,3 +29,5 @@ require 'plugins.dap'
 require 'plugins.mini'
 require 'plugins.tmux'
 require 'plugins.undotree'
+
+require('render-markdown').setup {}
