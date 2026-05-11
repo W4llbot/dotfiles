@@ -110,6 +110,7 @@ require('mini.hipatterns').setup {}
 require('mini.indentscope').setup {}
 require('mini.trailspace').setup {}
 require('mini.statusline').setup {}
+require('mini.tabline').setup {}
 
 -- start screen setup
 local starter = require('mini.starter')
