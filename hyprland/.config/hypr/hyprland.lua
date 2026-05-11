@@ -1,0 +1,6 @@
+require("lua.monitors")
+require("lua.variables")
+require("lua.binds")
+require("lua.input")
+require("lua.rules")
+require("lua.theme")

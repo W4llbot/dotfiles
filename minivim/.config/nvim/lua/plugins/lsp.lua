@@ -4,27 +4,28 @@ require('nvim-treesitter').setup {
 }
 
 local TSLanguages = {
-    "rust",
-    "javascript",
-    "zig",
-    "lua",
-    "vim",
-    "c",
-    "cpp",
-    "c_sharp",
-    "python",
-    "json",
-    "glsl",
-    "markdown",
-    "markdown_inline",
-    "comment",
-    "html",
-    "latex",
-    "typst",
-    "yaml",
+    'rust',
+    'javascript',
+    'zig',
+    'lua',
+    'vim',
+    'c',
+    'cpp',
+    'c_sharp',
+    'python',
+    'json',
+    'glsl',
+    'markdown',
+    'markdown_inline',
+    'comment',
+    'html',
+    'latex',
+    'typst',
+    'yaml',
+    'json',
 }
 
-require("nvim-treesitter").install { TSLanguages }
+require('nvim-treesitter').install { TSLanguages }
 vim.api.nvim_create_autocmd('FileType', {
     pattern = TSLanguages,
     callback = function()
