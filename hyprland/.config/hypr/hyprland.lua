@@ -1,5 +1,5 @@
 require("lua.monitors")
-require("lua.variables")
+require("lua.env")
 require("lua.binds")
 require("lua.input")
 require("lua.rules")
