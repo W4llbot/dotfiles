@@ -10,25 +10,25 @@ hl.env("AQ_TRACE", "1")
 -- Theme related
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
-hl.env("env = XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("env = GTK_THEME", "Breeze:dark")
+hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
+hl.env("GTK_THEME", "Breeze:dark")
 
 -- QT variables
-hl.env("env = QT_AUTO_SCREEN_SCALE_FACTOR", "1")
-hl.env("env = QT_QPA_PLATFORM", "wayland;xcb")
--- env = QT_WAYLAND_DISABLE_WINDOWDECORATION,1
-hl.env("env = QT_QPA_PLATFORMTHEME", "qt5ct")
+hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+-- QT_WAYLAND_DISABLE_WINDOWDECORATION,1
+hl.env("QT_QPA_PLATFORMTHEME", "qt5ct")
 
 -- Toolkit backends
-hl.env("env = GDK_BACKEND", "wayland,x11,*")
-hl.env("env = QT_QPA_PLATFORM", "wayland;xcb")
-hl.env("env = SDL_VIDEODRIVER", "wayland")
-hl.env("env = CLUTTER_BACKEND", "wayland")
+hl.env("GDK_BACKEND", "wayland,x11,*")
+hl.env("QT_QPA_PLATFORM", "wayland;xcb")
+hl.env("SDL_VIDEODRIVER", "wayland")
+hl.env("CLUTTER_BACKEND", "wayland")
 
 -- XDG specifications
-hl.env("env = XDG_CURRENT_DESKTOP", "Hyprland")
-hl.env("env = XDG_SESSION_TYPE", "wayland")
-hl.env("env = XDG_SESSION_DESKTOP", "Hyprland")
+hl.env("XDG_CURRENT_DESKTOP", "Hyprland")
+hl.env("XDG_SESSION_TYPE", "wayland")
+hl.env("XDG_SESSION_DESKTOP", "Hyprland")
 
 
 -----------------------
