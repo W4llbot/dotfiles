@@ -161,22 +161,22 @@
     },
     "pulseaudio": {
         // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}{format_source}",
-        "format-bluetooth": "{volume}% {icon} {format_source}",
-        "format-bluetooth-muted": " {icon} {format_source}",
-        "format-muted": "{format_source}",
+        "format": "{volume}% {icon}",
+        "format-bluetooth": "{volume}% {icon} ",
+        "format-bluetooth-muted": " ",
+        "format-muted": "",
         "format-source": "",
         "format-source-muted": "",
         // "format-source": "",
         // "format-source-muted": "",
         "format-icons": {
             "headphone": "",
-            "hands-free": "",
-            "headset": "",
-            "phone": "",
-            "portable": "",
-            "car": "",
-            "default": ["", "", ""]
+            // "hands-free": "",
+            // "headset": "",
+            // "phone": "",
+            // "portable": "",
+            // "car": "",
+            "default": ""
         },
         "on-click": "kitty -e wiremix"
     },
