@@ -4,7 +4,7 @@
 
 -- Set programs that you use
 local terminal    = "kitty"
-local fileManager = "thunar"
+local fileManager = "nautilus"
 local menu        = "pkill rofi || rofi -show drun"
 local browser = "firefox"
 
