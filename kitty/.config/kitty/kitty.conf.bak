@@ -12,7 +12,8 @@ enable_audio_bell no
 background_opacity 0.8
 dynamic_background_opacity yes
 
-# window_margin_width
+# window_margin_width 0 8
+# window_padding_width 0 8
 
 hide_window_decorations yes
 
@@ -28,6 +29,6 @@ bold_italic_font auto
 
 
 # BEGIN_KITTY_THEME
-# Catppuccin-Mocha
+# Rosé Pine
 include current-theme.conf
 # END_KITTY_THEME

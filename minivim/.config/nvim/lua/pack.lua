@@ -2,8 +2,10 @@
 vim.cmd('packadd! nohlsearch')
 vim.pack.add({
     -- Themes
-    { src = "https://github.com/catppuccin/nvim", name = "catppuccin" },
-    "https://github.com/folke/tokyonight.nvim",
+    { src = 'https://github.com/catppuccin/nvim', name = 'catppuccin' },
+    { src = 'https://github.com/folke/tokyonight.nvim', name = 'tokyonight' },
+    { src = 'https://github.com/ellisonleao/gruvbox.nvim', name = 'gruvbox' },
+    { src = 'https://github.com/rose-pine/neovim', name = 'rose-pine' },
 
     -- LSP stack
     'https://github.com/folke/lazydev.nvim',

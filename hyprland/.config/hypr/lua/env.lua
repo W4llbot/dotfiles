@@ -11,7 +11,7 @@ hl.env("AQ_TRACE", "1")
 hl.env("XCURSOR_SIZE", "24")
 hl.env("HYPRCURSOR_SIZE", "24")
 hl.env("XCURSOR_THEME", "Bibata-Modern-Classic")
-hl.env("GTK_THEME", "Breeze:dark")
+hl.env("GTK_THEME", "Tokyonight-BL-LB-Dark-Storm:dark")
 
 -- QT variables
 hl.env("QT_AUTO_SCREEN_SCALE_FACTOR", "1")
