@@ -25,6 +25,10 @@ hl.config({
         layout = "dwindle",
     },
 
+    cursor = {
+        inactive_timeout = 3
+    },
+
     decoration = {
         -- rounding       = 10,
         -- rounding_power = 2,
