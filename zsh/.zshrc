@@ -102,11 +102,6 @@ fi
 # Example aliases
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
-
-alias ff="fastfetch"
-alias spotify="spotify_player"
-alias clock="tty-clock -c -C 4"
-
 alias grep='grep --color=auto'
 alias mkdir='mkdir -p -v'
 
@@ -127,10 +122,12 @@ alias chown='chown --preserve-root'
 alias chmod='chmod --preserve-root'
 alias chgrp='chgrp --preserve-root'
 
-# alias ff="fastfetch"
 # alias ff="fastfetch --config examples/32"
+alias ff="fastfetch"
 alias cmatrix="cmatrix -C blue"
-# ff
+alias lg="lazygit"
+alias spotify="spotify_player"
+alias clock="tty-clock -c -C 4"
 
 # DWM related
 # alias cdwm="nvim ~/dotfiles/dwm/dwm/config.h"
@@ -153,5 +150,3 @@ function y() {
 
 # Set up fzf key bindings and fuzzy completion
 source <(fzf --zsh)
-
-# fastfetch
