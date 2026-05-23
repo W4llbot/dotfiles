@@ -21,6 +21,7 @@ vim.pack.add({
     -- Markdown
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',
     'https://github.com/3rd/image.nvim',
+    'https://github.com/hakonharnes/img-clip.nvim',
 
     -- Others
     'https://github.com/nvim-mini/mini.nvim',
@@ -36,4 +37,7 @@ require 'plugins.tmux'
 require 'plugins.undotree'
 
 require('render-markdown').setup {}
+---@diagnostic disable-next-line: missing-fields
 require('image').setup {}
+require ('img-clip').setup {}
+vim.keymap.set('n', '<leader>p', '<cmd>PasteImage<cr>', { desc = 'Paste image from system clipboard' })

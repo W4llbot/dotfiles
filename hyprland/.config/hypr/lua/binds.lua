@@ -17,14 +17,13 @@ local polkitStart = "systemctl --user start hyprpolkitagent"
 local screenshotDir = "~/Pictures/Screenshots"
 local screenshot = "hyprshot -o " .. screenshotDir .. " -m output"
 local screenshotWindow = "hyprshot -o " .. screenshotDir .. " -m window"
-local screenshotRegion = "hyprshot -o " .. screenshotDir .. " -m region"
+local screenshotRegion = "hyprshot --clipboard -o " .. screenshotDir .. " -m region"
 
 local colorPicker = "hyprpicker -a -f hex"
 local colorPickerRGB = "hyprpicker -a -f rgb"
 
 local lock = "hyprlock"
 local idle = "hypridle"
-
 
 -------------------
 ---- AUTOSTART ----
@@ -53,6 +52,7 @@ closeWindowBind:set_enabled(true)
 hl.bind(mainMod .. " + SHIFT + M", hl.dsp.exec_cmd("command -v hyprshutdown >/dev/null 2>&1 && hyprshutdown || hyprctl dispatch 'hl.dsp.exit()'"))
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
+hl.bind(mainMod .. " + F", hl.dsp.window.fullscreen({ mode = 'maximized' }))
 hl.bind(mainMod .. " + Space", hl.dsp.exec_cmd(menu))
 hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 -- hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))    -- dwindle only
