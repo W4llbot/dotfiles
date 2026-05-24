@@ -17,10 +17,11 @@
         "clock"
     ],
     "modules-right": [
-        "pulseaudio",
-        "network",
         "cpu",
         "memory",
+        "pulseaudio",
+        "bluetooth",
+        "network",
         "power-profiles-daemon",
         "battery",
         "battery#bat2",
@@ -28,7 +29,7 @@
     ],
     // Modules configuration
     "custom/arch": {
-        "format": " 󰣇 ",
+        "format": "󰣇 ",
         "tooltip-format": "btw",
         "on-click": "pkill rofi || rofi -show drun"
     },
@@ -65,7 +66,7 @@
         "format": "<span style=\"italic\">{}</span>"
     },
     "idle_inhibitor": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "format-icons": {
             "activated": "",
             "deactivated": ""
@@ -98,17 +99,16 @@
         }
     },
     "cpu": {
-        "format": "{usage}% ",
+        "format": "{usage}  ",
         "on-click": "kitty -e btop"
     },
     "memory": {
-        "format": "{}% ",
+        "format": "{}  ",
         "on-click": "kitty -e btop"
     },
     "power-profiles-daemon": {
-        "format": "{icon}",
+        "format": "{icon} ",
         "tooltip-format": "Power profile: {profile}",
-        "tooltip": true,
         "format-icons": {
             "default": "",
             "performance": "",
@@ -118,58 +118,58 @@
     },
     "battery": {
         "bat": "BAT0",
+        // "interval": 60,
         "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 15,
+            "critical": 5
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        // "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
+        "format": "{icon} ",
+        "tooltip-format": "{capacity}% - {timeTo}",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
         "on-click": "tlpui"
     },
     "battery#bat2": {
         "bat": "BAT1",
+        // "interval": 60,
         "states": {
-            // "good": 95,
-            "warning": 30,
-            "critical": 15
+            "warning": 15,
+            "critical": 5
         },
-        "format": "{capacity}% {icon}",
-        "format-full": "{capacity}% {icon}",
-        "format-charging": "{capacity}% ",
-        "format-plugged": "{capacity}% ",
-        // "format-alt": "{time} {icon}",
-        // "format-good": "", // An empty format will hide the module
-        // "format-full": "",
-        "format-icons": ["", "", "", "", ""],
+        "format": "{icon} ",
+        "tooltip-format": "{capacity}% - {timeTo}",
+        "format-icons": {
+            "default": ["󰂎", "󰁺", "󰁻", "󰁼", "󰁽", "󰁾", "󰁿", "󰂀", "󰂁", "󰂂", "󰁹"],
+            "charging": ["󰢟", "󰢜", "󰂆", "󰂇", "󰂈", "󰢝", "󰂉", "󰢞", "󰂊", "󰂋", "󰂅"]
+        },
         "on-click": "tlpui"
     },
     "network": {
-        // "interface": "wlp2*", // (Optional) To force the use of this interface
-        "format-wifi": "{signalStrength}% ",
-        "format-ethernet": "{ipaddr}/{cidr} 󰈀",
-        "tooltip-format": "{essid} {ifname} via {gwaddr}",
-        "format-linked": "{ifname} (No IP)",
-        "format-disconnected": "Disconnected ⚠",
-        // "format-alt": "{ifname}: {ipaddr}/{cidr}"
-        "on-click": "kitty -e nmtui"
+        "format-wifi": "{icon} ",
+        "format-ethernet": "󰈀 ",
+        "format-disconnected": "󰤮 ",
+        "tooltip-format-wifi": "{essid} ({signalStrength}%)",
+        "tooltip-format-ethernet": "{ifname} - {ipaddr}/{cidr} ",
+        "tooltip-format-disconnected": "Disconnected",
+        "on-click": "kitty -e nmtui",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"]
+    },
+    "bluetooth": {
+        "format": "󰂯 ",
+        "format-off": "󰂲 ",
+        "format-disabled": "󰂲 ", // an empty format will hide the module
+        "format-connected": "󰂰 ",
+        "tooltip-format": "{controller_alias} - {controller_address}",
+        "tooltip-format-connected": "{controller_alias} - {controller_address}\n{device_enumerate}",
+        "tooltip-format-enumerate-connected": "{device_alias} - {device_address}",
+        "on-click": "kitty -e bluetui"
     },
     "pulseaudio": {
-        // "scroll-step": 1, // %, can be a float
-        "format": "{volume}% {icon}",
-        "format-bluetooth": "{volume}% {icon} ",
-        "format-bluetooth-muted": " ",
-        "format-muted": "",
-        "format-source": "",
-        "format-source-muted": "",
-        // "format-source": "",
-        // "format-source-muted": "",
+        "format": "{icon} ",
+        "format-muted": " ",
+        "format-tooltip": "{volume}% {desc}",
         "format-icons": {
             "headphone": "",
             // "hands-free": "",
@@ -177,12 +177,12 @@
             // "phone": "",
             // "portable": "",
             // "car": "",
-            "default": ""
+            "default": ["", "", ""]
         },
         "on-click": "kitty -e wiremix"
     },
     "custom/power": {
-        "format" : " ⏻  ",
+        "format" : "⏻ ",
 		"tooltip-format": "wlogout",
         "on-click": "wlogout"
     }

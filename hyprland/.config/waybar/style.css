@@ -54,8 +54,16 @@ button:hover {
 /*     background-color: #a37800; */
 /* } */
 
+.modules-left {
+    margin-left: 10px;
+}
+
+.modules-right {
+    margin-right: 10px;
+}
+
 #workspaces button {
-    padding: 0 2px;
+    padding: 0;
     background-color: transparent;
     color: #c0caf5;
 }
@@ -83,19 +91,15 @@ button:hover {
 #cpu,
 #memory,
 #disk,
-#temperature,
-#backlight,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
+#custom-arch,
+#custom-power,
 #idle_inhibitor,
-#scratchpad,
+#bluetooth,
 #power-profiles-daemon,
 #mpd {
-    padding: 0 10px;
+    padding: 0 5px;
     color: #c0caf5;
 }
 
@@ -140,15 +144,16 @@ button:hover {
 /* } */
 /**/
 /* Using steps() instead of linear as a timing function to limit cpu usage */
-/* #battery.critical:not(.charging) { */
-/*     background-color: #f53c3c; */
-/*     color: #c0caf5; */
-/*     animation-name: blink; */
-/*     animation-duration: 0.5s; */
-/*     animation-timing-function: steps(12); */
-/*     animation-iteration-count: infinite; */
-/*     animation-direction: alternate; */
-/* } */
+#battery.critical:not(.charging) {
+    /* background-color: #f53c3c; */
+    /* color: #c0caf5; */
+    color: #f53c3c;
+    /* animation-name: blink; */
+    /* animation-duration: 0.5s; */
+    /* animation-timing-function: steps(12); */
+    /* animation-iteration-count: infinite; */
+    /* animation-direction: alternate; */
+}
 /**/
 /* #power-profiles-daemon { */
 /*     padding-right: 15px; */
