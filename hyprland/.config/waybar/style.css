@@ -2,12 +2,17 @@
     /* `otf-font-awesome` is required to be installed for icons */
     /* font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif; */
     font-family: "JetBrainsMono Nerd Font";
-    font-size: 14px;
+    font-size: 16px;
+
+    padding: 0;
+    margin: 0;
+    border: 0;
 }
 
 window#waybar {
     background-color: rgba(26, 27, 38, 1);
     /* border-bottom: 3px solid rgba(100, 114, 125, 0.5); */
+    border: 2px solid #59687c;
     color: #c0caf5;
     /* transition-property: background-color; */
     /* transition-duration: .5s; */
@@ -16,15 +21,6 @@ window#waybar {
 window#waybar.hidden {
     opacity: 0.2;
 }
-
-/*
-window#waybar.empty {
-    background-color: transparent;
-}
-window#waybar.solo {
-    background-color: #FFFFFF;
-}
-*/
 
 window#waybar.termite {
     background-color: #3F3F3F;
@@ -36,9 +32,6 @@ window#waybar.chromium {
 }
 
 button {
-    /* Use box-shadow instead of border so the text isn't offset */
-    box-shadow: inset 0 -3px transparent;
-    /* Avoid rounded borders under each button name */
     border: none;
     border-radius: 0;
 }
@@ -54,16 +47,22 @@ button:hover {
 /*     background-color: #a37800; */
 /* } */
 
-.modules-left {
-    margin-left: 10px;
-}
+/* .modules-left { */
+/*     margin-top: 6px; */
+/* } */
+/**/
+/* .modules-right { */
+/*     margin-bottom: 6px; */
+/* } */
 
-.modules-right {
-    margin-right: 10px;
+#workspaces {
+    margin: 4px 0;
+    padding: 0;
 }
 
 #workspaces button {
-    padding: 0;
+    margin: 0;
+    padding: 4px 0;
     background-color: transparent;
     color: #c0caf5;
 }
@@ -73,7 +72,7 @@ button:hover {
 }
 
 #workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
+    background-color: #59687c;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -82,7 +81,7 @@ button:hover {
 }
 
 #mode {
-    background-color: #64727D;
+    background-color: #59687c;
     /* box-shadow: inset 0 -3px #ffffff; */
 }
 
@@ -97,20 +96,39 @@ button:hover {
 #custom-power,
 #idle_inhibitor,
 #bluetooth,
-#power-profiles-daemon,
-#mpd {
-    padding: 0 5px;
+#power-profiles-daemon {
+    /* padding: 0 5px; */
+    /* justify-content: center; */
+    /* margin: 0 auto; */
+    padding: 4px 0;
     color: #c0caf5;
 }
 
-#clock {
-    letter-spacing: 10px;
+#custom-arch {
+    padding-top: 8px;
+    padding-right: 4px;
+}
+#idle_inhibitor {
+    padding-right: 8px;
+}
+#mpris {
+    padding-top: 4px;
+}
+#battery {
+    padding: 8px 0;
+}
+#network {
+    padding-left: 4px;
+}
+#custom-power {
+    padding-right: 4px;
+    padding-bottom: 10px;
 }
 
-#window,
-#workspaces {
-    margin: 0 4px;
-}
+/* #clock { */
+    /* letter-spacing: 10px; */
+/* } */
+
 
 /* If workspaces is the leftmost module, omit left margin */
 .modules-left > widget:first-child > #workspaces {
