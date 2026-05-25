@@ -39,17 +39,25 @@
         "disable-scroll": true,
         "all-outputs": true,
         "warp-on-scroll": false,
-        "format": "{name}",
+        "format": "{icon}",
+        "show-special": true,
         "format-icons": {
-            "1": "",
-            "2": "",
-            "3": "",
-            "4": "",
-            "5": "",
+            "1": "1",
+            "2": "2",
+            "3": "3",
+            "4": "4",
+            "5": "5",
+            "6": "6",
+            "7": "7",
+            "8": "8",
+            "9": "9",
+            "10": "10",
+            "magic": "S",
             "urgent": "",
             "focused": "",
             "default": ""
-        }
+        },
+        "on-click": "activate"
     },
     "mpris": {
         "rotate": 90,
@@ -62,7 +70,7 @@
         "status-icons": {
             "paused": "▶"
         },
-        "dynamic-order": ["artist", "title"],
+        "dynamic-order": ["title"],
         "ignored-players": ["firefox"],
         "max-length": 25
     },
@@ -75,12 +83,14 @@
         }
     },
     "clock": {
+        "justify": "center",
         // "timezone": "America/New_York",
         "format": "{:%H\n──\n%M}",
+        // "format": "{:%H\n%M}",
         // "format-alt": "{:%Y\n%m\n%d}",
         "tooltip-format": "<tt><small>{calendar}</small></tt>",
         "calendar": {
-            "mode"          : "year",
+            "mode"          : "month",
             "mode-mon-col"  : 3,
             "weeks-pos"     : "right",
             "on-scroll"     : 1,
