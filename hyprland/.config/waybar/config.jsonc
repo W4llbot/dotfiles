@@ -71,7 +71,7 @@
             "paused": "▶"
         },
         "dynamic-order": ["title"],
-        "ignored-players": ["firefox"],
+        // "ignored-players": ["firefox"],
         "max-length": 25
     },
     "idle_inhibitor": {
