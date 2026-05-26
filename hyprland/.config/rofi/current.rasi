@@ -4,9 +4,9 @@
 * {
     font:   "JetBrainsMono Nerd Font Medium 12";
 
-    bg0:     #2E3440;
-    bg1:     #3B4252;
-    fg0:     #D8DEE9;
+    bg0:     #1a1b26;
+    bg1:     #59687c;
+    fg0:     #c0caf5;
 
     accent-color:     #82aaff;
     urgent-color:     #EBCB8B;

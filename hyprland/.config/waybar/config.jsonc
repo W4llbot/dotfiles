@@ -51,7 +51,7 @@
             "7": "7",
             "8": "8",
             "9": "9",
-            "10": "10",
+            "10": "0",
             "magic": "S",
             "urgent": "",
             "focused": "",
@@ -192,7 +192,7 @@
         "justify": "center",
         "format": "{icon} ",
         "format-muted": " ",
-        "format-tooltip": "{volume}% {desc}",
+        "tooltip-format": "{volume} - {desc}",
         "format-icons": {
             "headphone": "",
             // "hands-free": "",
