@@ -1,6 +1,10 @@
-font=JetBrainsMono Nerd Font 10
+font=JetBrainsMono Nerd Font 12
 background-color=#1a1b26ee
 text-color=#c0caf5ff
+
+width=360
+height=120
+max-icon-size=80
 
 border-size=2
 border-color=#59687cee
