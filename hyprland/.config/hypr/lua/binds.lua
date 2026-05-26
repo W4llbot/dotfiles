@@ -10,7 +10,7 @@ local browser = "firefox"
 
 local bar = "waybar"
 local wallpaper = "hyprpaper"
-local notification = "swaync"
+local notification = "mako"
 local bluefilter = "hyprsunset"
 local polkitStart = "systemctl --user start hyprpolkitagent"
 
