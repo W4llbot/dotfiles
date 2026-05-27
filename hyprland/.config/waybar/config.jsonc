@@ -53,8 +53,8 @@
             "9": "9",
             "10": "0",
             "magic": "S",
-            "urgent": "",
-            "focused": "",
+            // "urgent": "",
+            // "focused": "",
             "default": ""
         },
         "on-click": "activate"
