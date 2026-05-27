@@ -14,6 +14,9 @@ vim.pack.add({
     'https://github.com/neovim/nvim-lspconfig',
     'https://github.com/mason-org/mason-lspconfig.nvim',
     { src = 'https://github.com/saghen/blink.cmp', version = vim.version.range('1.*') },
+    { src = 'https://github.com/L3MON4D3/LuaSnip', version = vim.version.range ('v2.*') },
+    'https://github.com/rafamadriz/friendly-snippets',
+
 
     -- DAP stack
     'https://github.com/mfussenegger/nvim-dap',
