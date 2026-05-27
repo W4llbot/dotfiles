@@ -58,3 +58,24 @@ require('mason-lspconfig').setup {
 vim.diagnostic.config({
     virtual_text = true,
 })
+
+
+---@module 'blink.cmp'
+---@type blink.cmp.Config
+require('blink.cmp').setup {
+    keymap = { preset = 'default' },
+    appearance = {
+        nerd_font_variant = 'mono'
+    },
+    completion = {
+        documentation = { auto_show = true }
+    },
+    sources = {
+        default = { 'lsp', 'path', 'snippets', 'buffer' },
+    },
+    fuzzy = {
+        implementation = "prefer_rust_with_warning"
+    }
+}
+
+vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
