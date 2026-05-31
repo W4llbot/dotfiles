@@ -57,7 +57,10 @@ dap.configurations.rust = dap.configurations.c
 require('dap-view').setup {auto_toggle = true,}
 
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = 'Debug: Start/Continue' })
-vim.keymap.set('n', '<F6>', function() require('dap').terminate() end, { desc = 'Debug: Terminate' })
+vim.keymap.set('n', '<F6>', function()
+    require('dap').terminate()
+    require('dap-view').close();
+end, { desc = 'Debug: Terminate' })
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { desc = 'Debug: Step Over' })
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { desc = 'Debug: Step Into' })
 vim.keymap.set('n', '<F12>', function() require('dap').step_out() end, { desc = 'Debug: Step Out' })

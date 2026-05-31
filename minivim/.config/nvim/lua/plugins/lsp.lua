@@ -79,6 +79,7 @@ require('blink.cmp').setup {
     completion = {
         documentation = { auto_show = true }
     },
+    signature = { enabled = true },
     snippets = { preset = 'luasnip' },
     sources = {
         default = { 'lsp', 'path', 'snippets', 'buffer' },
@@ -87,6 +88,9 @@ require('blink.cmp').setup {
         implementation = "prefer_rust_with_warning"
     }
 }
+
+-- Make current param for function signature help more visible
+vim.api.nvim_set_hl(0, "BlinkCmpSignatureHelpActiveParameter", { link = "Search" })
 
 -- Pass blink.cmp capabilities to lsp
 vim.lsp.config('*', { capabilities = require('blink.cmp').get_lsp_capabilities() })
