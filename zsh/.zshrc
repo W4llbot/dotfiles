@@ -129,6 +129,7 @@ alias cmatrix="cmatrix -C blue"
 alias lg="lazygit"
 alias spotify="spotify_player"
 alias clock="tty-clock -c -C 4"
+alias ncdu="ncdu --color dark"
 
 # DWM related
 # alias cdwm="nvim ~/dotfiles/dwm/dwm/config.h"
