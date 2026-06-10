@@ -21,6 +21,8 @@ vim.pack.add({
     -- DAP stack
     'https://github.com/mfussenegger/nvim-dap',
     'https://github.com/igorlfs/nvim-dap-view',
+    'https://github.com/thehamsta/nvim-dap-virtual-text',
+
 
     -- Markdown
     'https://github.com/MeanderingProgrammer/render-markdown.nvim',

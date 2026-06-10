@@ -53,6 +53,9 @@ dap.configurations.c = {
 dap.configurations.cpp = dap.configurations.c
 dap.configurations.rust = dap.configurations.c
 
+-- Virtual text
+require('nvim-dap-virtual-text').setup {}
+
 -- DAP view and keymaps
 require('dap-view').setup {auto_toggle = true,}
 
