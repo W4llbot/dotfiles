@@ -121,6 +121,9 @@ button:hover {
 #network {
     padding-left: 4px;
 }
+#pulseaudio {
+    padding-left: 4px;
+}
 #custom-power {
     padding-right: 4px;
     padding-bottom: 10px;
