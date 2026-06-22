@@ -16,6 +16,7 @@ vim.keymap.set('n', '<C-u>', '<C-u>zz', { desc = 'Half page up (centered)' })
 vim.keymap.set('v', '<', '<gv', { desc = 'Indent left and reselect' })
 vim.keymap.set('v', '>', '>gv', { desc = 'Indent right and reselect' })
 
+vim.keymap.set('n', '<leader>od', vim.diagnostic.open_float, { desc = 'Open diagnostic in floating window' })
 vim.keymap.set('n', '<leader>td', function()
 	vim.diagnostic.enable(not vim.diagnostic.is_enabled())
 end, { desc = 'Toggle diagnostics' })

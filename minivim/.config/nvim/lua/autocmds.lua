@@ -14,3 +14,15 @@ vim.api.nvim_create_autocmd('UIEnter', {
     end,
 })
 
+-- c specific go to header
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = { "c", "cpp" },
+    callback = function()
+        vim.keymap.set(
+            "n",
+            "<leader>gh",
+            "<cmd>LspClangdSwitchSourceHeader<CR>",
+            { buffer = true, desc = "Go to Header/Source" }
+        )
+    end,
+})

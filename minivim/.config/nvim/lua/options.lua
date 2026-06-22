@@ -23,7 +23,7 @@ vim.opt.expandtab     = true
 vim.opt.autoindent    = true
 vim.opt.smartindent   = true
 vim.opt.cindent       = true
-vim.opt.cinoptions    = ':0,l1,g0,(0,m1' -- cindent config
+vim.opt.cinoptions    = ':0,l1,g0,t0,(0' -- cindent config
 
 -- search opts
 vim.opt.ignorecase    = true
