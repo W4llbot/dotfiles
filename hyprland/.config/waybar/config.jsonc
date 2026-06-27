@@ -76,7 +76,7 @@
         },
         "dynamic-order": ["title"],
         // "ignored-players": ["firefox"],
-        "max-length": 25
+        "max-length": 20
     },
     "idle_inhibitor": {
         "justify": "center",

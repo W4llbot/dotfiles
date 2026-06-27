@@ -25,7 +25,8 @@ local TSLanguages = {
     'json',
 }
 
-require('nvim-treesitter').install { TSLanguages }
+require('nvim-treesitter').install(TSLanguages)
+
 vim.api.nvim_create_autocmd('FileType', {
     pattern = TSLanguages,
     callback = function()
