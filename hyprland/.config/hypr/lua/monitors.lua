@@ -4,10 +4,10 @@
 
 -- Setup
 hl.monitor({
-    output   = "",
-    mode     = "preferred",
-    position = "auto",
-    scale    = "auto",
+    output = "HDMI-A-2",
+    mode = "2560x1440@60",
+    position = "0x-1440",
+    scale = "1"
 })
 hl.monitor({
     output = "eDP-1",
@@ -16,10 +16,10 @@ hl.monitor({
     scale = "1"
 })
 hl.monitor({
-    output = "HDMI-A-2",
-    mode = "2560x1440@60",
-    position = "0x-1440",
-    scale = "1"
+    output   = "",
+    mode     = "preferred",
+    position = "auto",
+    scale    = "auto",
 })
 
 -- Workspace configs
